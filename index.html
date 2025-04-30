@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Genrator</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- Main container -->
+    <div
+      class="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 min-h-screen overflow-hidden flex flex-col justify-center items-center"
+    >
+      <!-- Heading -->
+      <h1 class="font-bold text-2xl font-serif text-purple-600 p-2 m-4">
+        Password Generator
+      </h1>
+
+      <!-- Password Input and Copy Container-->
+      <div class="py-2 mb-6 bg-white/60 backdrop-blur-md shadow-xl border border-white/30 rounded-xl p-6 focus-within:outline focus-within:outline-2 focus-within:outline-purple-300 transition-all duration-300 border-b-4 border-b-purple-200">
+        <input
+          placeholder="Password"
+          readonly
+          id="passwordDisplay"
+          class="ring-0 placeholder-purple-500 placeholder-opacity-60 font-bold h-8 w-[14rem]  px-2 py-5 text-purple-900 bg-transparent outline-none "
+        />
+        <button id="copyBtn" class="relative">
+          <span id="copyMsg" class="hidden absolute bottom-5 bg-gray-800 text-white text-opacity-90 text-xs px-2 py-1 rounded-sm"></span>
+          <i class="fa-solid fa-copy"></i>
+        </button>
+      </div>
+
+      <!-- Card -->
+      <div
+        class="bg-white/60 backdrop-blur-md shadow-xl border border-white/30 rounded-xl p-6 text-gray-800 drop-shadow-2xl border-b-4 border-b-purple-200 h-[20rem] w-[18rem]"
+      >
+
+        <!-- password length and display -->
+        <div class="flex justify-between items-center mb-4">
+          <p class="text-purple-500 font-bold text-sm">Password Length</p>
+          <!-- length display -->
+          <p id="passwordLen" class="text-purple-600 font-bold text-sm">0</p>
+        </div>
+
+        <!-- slider -->
+        <input id="slider" type="range" min="1" max="20" step="1" class="w-full h-[0.35rem] bg-purple-500 rounded-lg appearance-none cursor-pointer accent-purple-600 focus:outline-none -z-10 p-1 mb-4" />
+
+        <!-- checkboxes -->
+        <div class="cursor-pointer my-2 flex items-center gap-2">
+            
+          <input type="checkbox" id="uppercase" class=" w-4 h-4  bg-gray-100 border-gray-300 rounded-sm" />
+          <label for="uppercase" class="text-purple-900 text-sm font-serif">Include Uppercase Letters</label>
+        </div>
+
+        <div class="cursor-pointer my-2 flex items-center gap-2">
+          <input type="checkbox" id="lowercase" class="w-4 h-4  bg-gray-100 border-gray-300 rounded-sm" />
+          <label for="lowercase" class="text-purple-900 text-sm font-serif">Include Lowercase Letters</label>
+        </div>
+
+        <div class="cursor-pointer my-2 flex items-center gap-2">
+          <input type="checkbox" id="numbers" class="w-4 h-4  bg-gray-100 border-gray-300 rounded-sm" />
+          <label for="numbers" class="text-purple-900 text-sm font-serif">Include Numbers</label>
+        </div>
+
+        <div class="cursor-pointer my-2 flex items-center gap-2">
+          <input type="checkbox" id="symbols" class="w-4 h-4  bg-gray-100 border-gray-300 rounded-sm" />
+          <label for="symbols" class="text-purple-900 text-sm font-serif ">Include Symbols</label>
+        </div>
+
+        <!-- strength -->
+        <div class="flex justify-between items-center my-4">
+          <p class=" text-purple-900 font-semibold">Strength</p>
+          <div id="strength-indicator" class="w-3 h-3 rounded-full"></div>
+        </div>
+
+        <!-- generate button -->
+        <button id="generateButton" class="flex justify-center items-center w-full  bg-purple-600 hover:bg-purple-700  border border-b-4 border-b-purple-300 rounded-md p-1 font-bold text-purple-200 ">Generate Password</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a7b7095b65.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
