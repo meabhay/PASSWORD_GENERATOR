@@ -154,7 +154,7 @@ generateButton.addEventListener("click", () => {
 
     // compulsory addition
     for(let i = 0; i < funcArr.length; i++){
-        password += funcArr[i]();
+      password += funcArr[i](); //The parentheses () are used to invoke or call the function stored at funcArr[i].
     }
 
     // remaining addition
